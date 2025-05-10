@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Telegram Grubuna Geç</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .btn {
+      background-color: #25D366;
+      color: white;
+      padding: 20px 40px;
+      font-size: 24px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 40px;
+    }
+    .btn:hover {
+      background-color: #1ebc57;
+    }
+  </style>
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function()
+    {n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}
+    (window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1055770896412389');
+  </script>
+  <!-- End Facebook Pixel Code -->
+
+  <script>
+    function redirectToTelegram() {
+      fbq('track', 'Lead');
+      window.location.href = "https://t.me/+Bj9-GkPvRec5MTg1";
+    }
+  </script>
+</head>
+<body>
+  <h1>Telegram grubuna özel içerik seni bekliyor</h1>
+  <p>Katıl, dene, kazan. Ücretsiz!</p>
+  <button class="btn" onclick="redirectToTelegram()">Telegram'a geç</button>
+</body>
+</html>
