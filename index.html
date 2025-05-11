@@ -26,16 +26,31 @@
     s.parentNode.insertBefore(t,s)}
     (window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    
+
     fbq('init', '1055770896412389');
     fbq('track', 'PageView');
-    fbq('track', 'Lead');
   </script>
 
   <script>
+    function getTelegramLink() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("utm_content");
+
+      const links = {
+        "12": "https://t.me/+AH8u18-yxzQ0ZDNl",
+        "14": "https://t.me/+FegMZuq_q-g2OGJl",
+        "18": "https://t.me/+2EMc0R5QDwMyMDA1",
+        "49": "https://t.me/+seJPOg6uD81jM2Vl"
+      };
+
+      // Если utm_content нет → используем дефолтную группу
+      return links[id] || "https://t.me/+Bj9-GkPvRec5MTg1";
+    }
+
     setTimeout(function() {
-      window.location.href = "https://t.me/+Bj9-GkPvRec5MTg1";
-    }, 800); // 0.8 секунды — пиксель точно успевает отработать
+      fbq('track', 'Lead');
+      window.location.href = getTelegramLink();
+    }, 800);
   </script>
 </head>
 <body>
