@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Telegram Grubuna Geç</title>
+  <title>Yönlendiriliyor...</title>
   <style>
     body {
       background-color: #121212;
@@ -10,19 +10,6 @@
       font-family: Arial, sans-serif;
       text-align: center;
       padding-top: 100px;
-    }
-    .btn {
-      background-color: #25D366;
-      color: white;
-      padding: 20px 40px;
-      font-size: 24px;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      margin-top: 40px;
-    }
-    .btn:hover {
-      background-color: #1ebc57;
     }
   </style>
 
@@ -39,22 +26,20 @@
     s.parentNode.insertBefore(t,s)}
     (window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
+    
     fbq('init', '1055770896412389');
-    fbq('track', 'PageView'); // ← Добавлено
+    fbq('track', 'PageView');
+    fbq('track', 'Lead');
   </script>
 
   <script>
-    function redirectToTelegram() {
-      fbq('track', 'Lead');
-      setTimeout(function() {
-        window.location.href = "https://t.me/+Bj9-GkPvRec5MTg1";
-      }, 500); // ← Задержка 500 мс для отправки события
-    }
+    setTimeout(function() {
+      window.location.href = "https://t.me/+Bj9-GkPvRec5MTg1";
+    }, 800); // 0.8 секунды — пиксель точно успевает отработать
   </script>
 </head>
 <body>
-  <h1>Telegram grubuna özel içerik seni bekliyor</h1>
-  <p>Katıl, dene, kazan. Ücretsiz!</p>
-  <button class="btn" onclick="redirectToTelegram()">Telegram'a geç</button>
+  <h1>Yönlendiriliyorsunuz... Lütfen bekleyin.</h1>
+  <p>Telegram grubuna geçiliyor</p>
 </body>
 </html>
