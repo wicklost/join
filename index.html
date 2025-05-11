@@ -11,6 +11,19 @@
       text-align: center;
       padding-top: 100px;
     }
+    .btn {
+      background-color: #25D366;
+      color: white;
+      padding: 16px 32px;
+      font-size: 22px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 40px;
+    }
+    .btn:hover {
+      background-color: #1ebc57;
+    }
   </style>
 
   <!-- Facebook Pixel -->
@@ -43,18 +56,26 @@
         "49": "https://t.me/+seJPOg6uD81jM2Vl"
       };
 
-      // Если utm_content нет → используем дефолтную группу
       return links[id] || "https://t.me/+Bj9-GkPvRec5MTg1";
     }
 
-    setTimeout(function() {
+    function redirectWithLead() {
       fbq('track', 'Lead');
+      setTimeout(function () {
+        window.location.href = getTelegramLink();
+      }, 500);
+    }
+
+    // fallback: авто-редирект без лида через 10 сек
+    setTimeout(function () {
       window.location.href = getTelegramLink();
-    }, 800);
+    }, 10000);
   </script>
 </head>
 <body>
-  <h1>Yönlendiriliyorsunuz... Lütfen bekleyin.</h1>
-  <p>Telegram grubuna geçiliyor</p>
+  <h1>Telegram grubuna yönlendiriliyorsunuz</h1>
+  <p>⚠️ Katılmak için butona tıklayın — ya da 10 saniye içinde otomatik geçiş yapılacak</p>
+
+  <button class="btn" onclick="redirectWithLead()">Telegram'a geç</button>
 </body>
 </html>
